@@ -1,4 +1,4 @@
-local thisSetting = {
+ stalocal thisSetting = {
 	tarPort = 0, 
 	thisPort = 0, 
 	user = ""
@@ -100,8 +100,7 @@ local function run()
 			sleep(2)
 			print("lol.")
 			sleep(2)
-			term.clear()
-			runIntro()
+			os.reboot()
 		else
 			print("type 'help' to receive the list of commands'")
 		end
