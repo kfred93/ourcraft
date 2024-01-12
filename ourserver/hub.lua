@@ -60,13 +60,15 @@ local function run()
 	
 	print("Opening modem on channel number " .. channelNum)
 	modem.open(channelNum)
-	
-	local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
-	
-	if message.compLabel ~= nil then
-		if message.action == "setting" then 
-			print("Transmitting settings to " .. message.compLabel)
-			modem.transmit(senderChannel, replyChannel, getSettings(message.compLabel))
+
+	while true do
+		local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
+		
+		if message.compLabel ~= nil then
+			if message.action == "setting" then 
+				print("Transmitting settings to " .. message.compLabel)
+				modem.transmit(senderChannel, replyChannel, getSettings(message.compLabel))
+			end
 		end
 	end
 end
