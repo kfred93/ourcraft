@@ -1,4 +1,4 @@
- stalocal thisSetting = {
+local thisSetting = {
 	tarPort = 0, 
 	thisPort = 0, 
 	user = ""
