@@ -5,7 +5,7 @@ local function getSettings()
 	local modem = peripheral.find("modem")
 	
 	local msg = {
-		action = "setting"
+		action = "setting",
 		compLabel = computerLabel
 	}
 	
