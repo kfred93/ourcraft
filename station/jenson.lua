@@ -82,7 +82,7 @@ local function run()
 			break
 		elseif userInput == "help" then
 			prompt()
-		elseif userInput == "resart" then
+		elseif userInput == "restart" then
 			print("Restarting.")
 			sleep(1)
 			print("Restarting..")
