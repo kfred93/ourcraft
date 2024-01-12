@@ -10,17 +10,17 @@ local function getSettings()
 	}
 	
 	local timerId = os.startTimer(10)
-	modem.open(os.getComputerID)
-	modem.transmit(2001, os.getComputerID, msg)
+	modem.open(os.getComputerID())
+	modem.transmit(2001, os.getComputerID(), msg)
 	
 	local event, param1, senderChannel, replyChannel, message, senderDistance = os.pullEvent()
 	
 	if event == "modem_message" then
 		thisSetting = message
-		modem.close
+		modem.close()
 	elseif event == "timer" then
 		if param1 == timerId then
-			modem.close
+			modem.close()
 			term.clear()
 			print("Error. Could not reach hub server.")
 		end
