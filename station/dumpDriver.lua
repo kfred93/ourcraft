@@ -17,10 +17,10 @@ local function getSettings()
 	
 	if event == "modem_message" then
 		thisSetting = message
-		modem.close()
+		modem.close(os.getComputerID())
 	elseif event == "timer" then
 		if param1 == timerId then
-			modem.close()
+			modem.close(os.getComputerID())
 			term.clear()
 			print("Error. Could not reach hub server.")
 		end
