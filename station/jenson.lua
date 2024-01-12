@@ -2,7 +2,7 @@ local thisSetting = {}
 
 local function getSettings()
 	local computerLabel = os.getComputerLabel()
-	local modem = peripherals.find("modem")
+	local modem = peripheral.find("modem")
 	
 	local msg = {
 		action = "setting"
