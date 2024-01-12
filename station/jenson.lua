@@ -80,7 +80,8 @@ local function run()
 				print("Dumped!")
 			elseif userInput == "exit" then
 				print("Goodbye, " .. thisSetting.user)
-				break
+				sleep(3)
+				os.exit()
 			elseif userInput == "help" then
 				prompt()
 			elseif userInput == "restart" then
