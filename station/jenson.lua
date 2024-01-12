@@ -3,7 +3,7 @@ local function getSettings()
 	local thisSetting = {
 		tarPort = 0, 
 		thisPort = 0, 
-		user = "null"
+		user = ""
 	}
 
 	if computerLabel == "station_1" then
@@ -41,7 +41,7 @@ local function intro()
   print("...")
   sleep(1)
   print("")
-  print("Hello, I am Jenson - your personal assistant.")
+  print("Hello, " .. user .. ". I am Jenson - your personal assistant.")
 end
 
 
@@ -107,6 +107,4 @@ local function run()
 			print("type 'help' to receive the list of commands'")
 		end
 	end
-end
-			
 end
