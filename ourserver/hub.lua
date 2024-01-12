@@ -32,16 +32,22 @@ local function getSettings(compLabel)
 	
 	if compLabel == "station_1_driveDumper" then
 		thisSetting.channelNum = 13101
+		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_2_driveDumper" then
 		thisSetting.channelNum = 23101
+		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_3_driveDumper" then
 		thisSetting.channelNum = 33101
+		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_4_driveDumper" then
 		thisSetting.channelNum = 43101
+		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_5_driveDumper" then
 		thisSetting.channelNum = 53101
+		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_6_driveDumper" then
 		thisSetting.channelNum = 63101
+		thisSetting.conduitSide = "left"
 	end
 	
 	return thisSetting
