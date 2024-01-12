@@ -30,19 +30,22 @@ end
 local function run()
 	print("Starting driveDumper")
 	getSettings()
-	
-	local modem = peripheral.find("modem")
-	modem.open(thisSetting.channelNum)
-	print("Started")
-	print("")
-	local event, side, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
-	
-	if message == "dump" then
-		print("Dumping...")
-		redstone.setOutput(thisSetting.conduitSide, true)
-		sleep(5)
-		redstone.setOutput(thisSetting.conduitSide, false)
-		print("Dumped!")
+	local next = next
+
+	if next(thisSetting) ~= nil then	
+		local modem = peripheral.find("modem")
+		modem.open(thisSetting.channelNum)
+		print("Started")
+		print("")
+		local event, side, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
+		
+		if message == "dump" then
+			print("Dumping...")
+			redstone.setOutput(thisSetting.conduitSide, true)
+			sleep(5)
+			redstone.setOutput(thisSetting.conduitSide, false)
+			print("Dumped!")
+		end
 	end
 end
 
