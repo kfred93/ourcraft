@@ -2,27 +2,28 @@ local thisSetting = {}
 
 local function getSettings()
 	local computerLabel = os.getComputerLabel()
-
-	if computerLabel == "station_1" then
-		thisSetting.user = "Ramathor"
-		thisSetting.myPort = 13100
-		thisSetting.tarPort = 13101
-	elseif computerLabel == "station_2" then
-		thisSetting.user = "thecynicalson"
-		thisSetting.myPort = 23100
-		thisSettingtarPort = 23101
-	elseif computerLabel == "station_3" then
-		thisSetting.user = "flamingsnowman"
-		thisSetting.myPort = 33100
-		thisSetting.tarPort = 33101
-	elseif computerLabel == "station_4" then
-		thisSetting.user = "Alchemy_69"
-		thisSetting.myPort = 43100
-		thisSetting.tarPort = 43101
-	elseif computerLabel == "station_5" then
-		thisSetting.user = "Rawwberrt"
-		thisSetting.myPort = 53100
-		thisSetting.tarPort = 53101
+	local modem = peripherals.find("modem")
+	
+	local msg = {
+		action = "setting"
+		compLabel = computerLabel
+	}
+	
+	local timerId = os.startTimer(10)
+	modem.open(os.getComputerID)
+	modem.transmit(2001, os.getComputerID, msg)
+	
+	local event, param1, senderChannel, replyChannel, message, senderDistance = os.pullEvent()
+	
+	if event == "modem_message" then
+		thisSetting = message
+		modem.close
+	elseif event == "timer" then
+		if param1 == timerId then
+			modem.close
+			term.clear()
+			print("Error. Could not reach hub server.")
+		end
 	end
 end
 		
