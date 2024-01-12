@@ -2,8 +2,8 @@ local function getSettings()
 	local computerLabel = os.getComputerLabel()
 	local thisSetting = {
 		tarPort = 0, 
-		thisPort = 0, u
-		ser = ""
+		thisPort = 0, 
+		user = ""
 	}
 
 	if computerLabel == "station_1" then
