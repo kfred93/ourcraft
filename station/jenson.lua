@@ -1,8 +1,8 @@
 local function getSettings()
 	local computerLabel = os.getComputerLabel()
 	local thisSetting = {
-		tarPort = 0
-		thisPort = 0
+		tarPort = 0,
+		thisPort = 0,
 		user = ""
 	}
 
