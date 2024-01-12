@@ -81,7 +81,7 @@ local function run()
 			elseif userInput == "exit" then
 				print("Goodbye, " .. thisSetting.user)
 				sleep(3)
-				shell.exit
+				shell.exit()
 			elseif userInput == "help" then
 				prompt()
 			elseif userInput == "restart" then
