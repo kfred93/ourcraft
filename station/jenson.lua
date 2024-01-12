@@ -14,8 +14,6 @@ local function getSettings()
 	modem.transmit(2001, os.getComputerID(), msg)
 	
 	local event, param1, senderChannel, replyChannel, message, senderDistance = os.pullEvent()
-
-	print(event)
 	
 	if event == "modem_message" then
 		thisSetting = message
