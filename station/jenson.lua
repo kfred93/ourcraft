@@ -1,10 +1,11 @@
+local thisSetting = {
+	tarPort = 0, 
+	thisPort = 0, 
+	user = ""
+}
+
 local function getSettings()
 	local computerLabel = os.getComputerLabel()
-	local thisSetting = {
-		tarPort = 0, 
-		thisPort = 0, 
-		user = ""
-	}
 
 	if computerLabel == "station_1" then
 		thisSetting.user = "Ramathor"
@@ -27,8 +28,6 @@ local function getSettings()
 		thisSetting.myPort = 53100
 		thisSetting.tarPort = 53101
 	end
-	
-	return thisSetting
 end
 		
 		
@@ -41,7 +40,7 @@ local function intro()
   print("...")
   sleep(1)
   print("")
-  print("Hello, " .. user .. ". I am Jenson - your personal assistant.")
+  print("Hello, " .. thisSetting.user .. ". I am Jenson - your personal assistant.")
 end
 
 
@@ -65,8 +64,6 @@ local function runIntro()
 end
 
 local function run()
-	local thisSetting = getSettings()
-
 	runIntro()
 	userInput = nil
 	local modem = peripheral.find("modem")
@@ -108,3 +105,5 @@ local function run()
 		end
 	end
 end
+
+run()
