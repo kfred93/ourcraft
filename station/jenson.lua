@@ -63,43 +63,47 @@ end
 
 local function run()
 	getSettings()
-	runIntro()
-	userInput = nil
-	local modem = peripheral.find("modem")
+	local next = next
 
-	while true do
-		userInput = read()
-		
-		if userInput == "dump" then
-			print("Dumping!")
-			modem.transmit(thisSetting.tarPort, thisSetting.myPort, "dump")
-			sleep(5)
-			primt("Dumped!")
-		elseif userInput == "exit" then
-			print("Goodbye, " .. thisSetting.user)
-			break
-		elseif userInput == "help" then
-			prompt()
-		elseif userInput == "restart" then
-			print("Restarting.")
-			sleep(1)
-			print("Restarting..")
-			sleep(2)
-			print("Restarting...")
-			sleep(1)
-			print("Restarting....")
-			sleep(4)
-			print("Restarting.....")
-			sleep(1)
-			print("Restarting......")
-			sleep(3)
-			print("Restarting.......")
-			sleep(2)
-			print("lol.")
-			sleep(2)
-			os.reboot()
-		else
-			print("type 'help' to receive the list of commands'")
+	if next(thisSetting) ~= nil then	
+		runIntro()
+		userInput = nil
+		local modem = peripheral.find("modem")
+	
+		while true do
+			userInput = read()
+			
+			if userInput == "dump" then
+				print("Dumping!")
+				modem.transmit(thisSetting.tarPort, thisSetting.myPort, "dump")
+				sleep(5)
+				primt("Dumped!")
+			elseif userInput == "exit" then
+				print("Goodbye, " .. thisSetting.user)
+				break
+			elseif userInput == "help" then
+				prompt()
+			elseif userInput == "restart" then
+				print("Restarting.")
+				sleep(1)
+				print("Restarting..")
+				sleep(2)
+				print("Restarting...")
+				sleep(1)
+				print("Restarting....")
+				sleep(4)
+				print("Restarting.....")
+				sleep(1)
+				print("Restarting......")
+				sleep(3)
+				print("Restarting.......")
+				sleep(2)
+				print("lol.")
+				sleep(2)
+				os.reboot()
+			else
+				print("type 'help' to receive the list of commands'")
+			end
 		end
 	end
 end
