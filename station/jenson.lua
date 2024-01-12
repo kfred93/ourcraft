@@ -64,6 +64,7 @@ local function runIntro()
 end
 
 local function run()
+	getSettings()
 	runIntro()
 	userInput = nil
 	local modem = peripheral.find("modem")
