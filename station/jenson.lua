@@ -103,7 +103,7 @@ local function run()
 				sleep(2)
 				os.reboot()
 			else
-				print("type 'help' to receive the list of commands'")
+				print("type 'help' to receive the list of commands.")
 			end
 		end
 	end
