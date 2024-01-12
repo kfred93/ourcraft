@@ -5,7 +5,7 @@ local function getSettings()
 	local modem = peripheral.find("modem")
 	
 	local msg = {
-		action = "setting"
+		action = "setting",
 		compLabel = computerLabel
 	}
 	
@@ -29,16 +29,16 @@ end
 		
 		
 local function intro()
-  print("OURCRAFT SOFTWARE SYSTEMS... INITIATING")
-  print(".")
-  sleep(1)
-  print("..")
-  sleep(2)
-  print("...")
-  sleep(1)
-  print("")
-  print("Hello, " .. thisSetting.user .. ". I am Jenson - your personal assistant.")
-  sleep(1)
+	print("OURCRAFT SOFTWARE SYSTEMS... INITIATING")
+	print(".")
+	sleep(1)
+	print("..")
+	sleep(2)
+	print("...")
+	sleep(1)
+	print("")
+	print("Hello, " .. thisSetting.user .. ". I am Jenson - your personal assistant.")
+	sleep(1)
 end
 
 
