@@ -67,7 +67,9 @@ local function run()
 		if message.compLabel ~= nil then
 			if message.action == "setting" then 
 				print("Transmitting settings to " .. message.compLabel)
-				modem.transmit(senderChannel, replyChannel, getSettings(message.compLabel))
+				print("message: " .. message)
+				print("senderChannel")
+				modem.transmit(replyChannel, senderChannel, getSettings(message.compLabel))
 			end
 		end
 	end
