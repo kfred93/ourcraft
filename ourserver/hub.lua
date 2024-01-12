@@ -11,7 +11,7 @@ local function getSettings(compLabel)
 	elseif compLabel == "station_2" then
 		thisSetting.user = "thecynicalson"
 		thisSetting.myPort = 23100
-		thisSettingtarPort = 23101
+		thisSetting.tarPort = 23101
 	elseif compLabel == "station_3" then
 		thisSetting.user = "flamingsnowman"
 		thisSetting.myPort = 33100
