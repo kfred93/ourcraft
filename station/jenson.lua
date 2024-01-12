@@ -1,31 +1,31 @@
 local function getSettings()
 	local computerLabel = os.getComputerLabel()
 	local thisSetting = {
-		tarPort = 0,
-		thisPort = 0,
-		user = ""
+		tarPort = 0, 
+		thisPort = 0, u
+		ser = ""
 	}
 
 	if computerLabel == "station_1" then
-		thisSetting("user") = "Ramathor"
-		thisSetting("myPort") = 13100
-		thisSetting("tarPort") = 13101
+		thisSetting.user = "Ramathor"
+		thisSetting.myPort = 13100
+		thisSetting.tarPort = 13101
 	elseif computerLabel == "station_2" then
-		thisSetting("user") = "thecynicalson"
-		thisSetting("myPort") = 23100
-		thisSetting("tarPort") = 23101
+		thisSetting.user = "thecynicalson"
+		thisSetting.myPort = 23100
+		thisSettingtarPort = 23101
 	elseif computerLabel == "station_3" then
-		thisSetting("user") = "flamingsnowman"
-		thisSetting("myPort") = 33100
-		thisSetting("tarPort") = 33101
+		thisSetting.user = "flamingsnowman"
+		thisSetting.myPort = 33100
+		thisSetting.tarPort = 33101
 	elseif computerLabel == "station_4" then
-		thisSetting("user") = "Alchemy_69"
-		thisSetting("myPort") = 43100
-		thisSetting("tarPort") = 43101
+		thisSetting.user = "Alchemy_69"
+		thisSetting.myPort = 43100
+		thisSetting.tarPort = 43101
 	elseif computerLabel == "station_5" then
-		thisSetting("user") = "Rawwberrt"
-		thisSetting("myPort") = 53100
-		thisSetting("tarPort") = 53101
+		thisSetting.user = "Rawwberrt"
+		thisSetting.myPort = 53100
+		thisSetting.tarPort = 53101
 	end
 	
 	return thisSetting
@@ -107,4 +107,6 @@ local function run()
 			print("type 'help' to receive the list of commands')
 		end
 	end
+end
+			
 end
