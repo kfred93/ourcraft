@@ -32,22 +32,16 @@ local function getSettings(compLabel)
 	
 	if compLabel == "station_1_driveDumper" then
 		thisSetting.channelNum = 13101
-		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_2_driveDumper" then
 		thisSetting.channelNum = 23101
-		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_3_driveDumper" then
 		thisSetting.channelNum = 33101
-		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_4_driveDumper" then
 		thisSetting.channelNum = 43101
-		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_5_driveDumper" then
 		thisSetting.channelNum = 53101
-		thisSetting.conduitSide = "left"
 	elseif compLabel == "station_6_driveDumper" then
 		thisSetting.channelNum = 63101
-		thisSetting.conduitSide = "left"
 	end
 	
 	return thisSetting
@@ -56,7 +50,7 @@ end
 local function run()
 	print("Beginning server: " .. computerLabel)
 	print("Establishing modem")
-	local modem = peripheral.find("modem")
+	local modem = peripherals.find("modem")
 	
 	print("Opening modem on channel number " .. channelNum)
 	modem.open(channelNum)
@@ -64,11 +58,9 @@ local function run()
 	local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
 	
 	if message.compLabel ~= nil then
-		if message.action == "settings" then 
+		if message.action == "setting" then 
 			print("Transmitting settings to " .. message.compLabel)
-			modem.transmit(senderChannel, replyChannel, getSettings(message.compLabel))
+			modem.transmit(senderChannel, replyChannel, getSettings(message.compLabel)
 		end
 	end
 end
-
-run()
