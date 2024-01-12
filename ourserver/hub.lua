@@ -50,7 +50,7 @@ end
 local function run()
 	print("Beginning server: " .. computerLabel)
 	print("Establishing modem")
-	local modem = peripherals.find("modem")
+	local modem = peripheral.find("modem")
 	
 	print("Opening modem on channel number " .. channelNum)
 	modem.open(channelNum)
