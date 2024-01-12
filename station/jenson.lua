@@ -38,7 +38,7 @@ local function intro()
   sleep(1)
   print("..")
   sleep(2)
-  print("...)
+  print("...")
   sleep(1)
   print("")
   print("Hello, I am Jenson - your personal assistant.")
@@ -104,7 +104,7 @@ local function run()
 			term.clear()
 			runIntro()
 		else
-			print("type 'help' to receive the list of commands')
+			print("type 'help' to receive the list of commands'")
 		end
 	end
 end
