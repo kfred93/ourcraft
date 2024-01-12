@@ -38,7 +38,7 @@ local function intro()
 	sleep(1)
 	print("")
 	print("Hello, " .. thisSetting.user .. ". I am Jenson - your personal assistant.")
-	sleep(1)
+	sleep(2)
 end
 
 
