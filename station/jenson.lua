@@ -77,7 +77,7 @@ local function run()
 				print("Dumping!")
 				modem.transmit(thisSetting.tarPort, thisSetting.myPort, "dump")
 				sleep(5)
-				primt("Dumped!")
+				print("Dumped!")
 			elseif userInput == "exit" then
 				print("Goodbye, " .. thisSetting.user)
 				break
